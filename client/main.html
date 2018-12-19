@@ -1,0 +1,81 @@
+<head>
+  <title>Tracker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  {{> loginButtons}}
+  <h1 class="h1">Welcome to Tracker!</h1>
+  {{> hello}}
+</body>
+
+<template name="hello">
+  <div class="container">
+    <div class="line">
+      <div class="addTimeBlock">
+        <div class="proposal timerTtack">
+          <div class="addTimeHead">
+              <button class="addBtn" type="">ADD TIME</button>
+              <button class="showSpent" type="">SHOW SPEND TIME</button>
+          </div>
+          <div>
+            <p>Потрачено годин</p>
+            <input class="littleInp numInp spentH" min="0" max="1000000000" type="number" name="spentH" value="">
+          </div>
+          <div>
+            <p>Потрачено хвилин</p>
+            <input class="littleInp numInp spentM" min="0" max="1000000000" type="number" name="spentM" value="">
+          </div>
+          <div>
+            <p>На що потрачено</p>
+            <input class="littleInp textInp spentD" type="text" name="spentD" value="">
+          </div>
+        </div>
+      </div>
+        <div class="proposalTime">
+          <div class="proposal">
+              <div>
+                  <p>Потрібно годин</p>
+                  <input class="littleInp numInp needH" type="number" name="" value="">
+                </div>
+                <div>
+                  <p>Потрібно хвилин</p>
+                  <input class="littleInp numInp needM" type="number" name="" value="">
+                </div>
+                <div>
+                  <button class="propButton" type="">Оновити потрібний час</button>  
+                </div>
+                <div>
+                  <p class="timeWhatYouNeed"></p>  
+                </div>
+            </div>
+          </div>
+        </div>
+      <div class="tableDuv">
+        <table id="tableUsers">
+            <thead>
+                <tr>
+                  <th class="thLogo">Користувач</th>
+                  <th data-sortby="name" class="thName">Потрачено годин</th>
+                  <th class="thAddress">Потрачено хвилин</th>
+                  <th data-sortby="countEmployee" class="thcountEmploye">На що потрачено</th>
+                  <th data-sortby="countEmployee" class="thcountEmploye">Коли потрачено</th>
+                </tr>
+            </thead>
+            <tbody>
+              {{#each comp}}
+                <tr>
+                  <th>{{userEmail}}</th> 
+                  <th>{{spentH}}</th> 
+                  <th>{{spentM}}</th> 
+                  <th>{{spentD}}</th> 
+                  <th>{{data}}</th> 
+                </tr>
+              {{/each}}
+            </tbody>
+      </table>
+    </div>    
+  </div>
+</template>
+
+

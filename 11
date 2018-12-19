@@ -1,0 +1,20 @@
+        <div class="timer">
+            <div class="addTimeHead">
+                <button class="addBtn" type="">ADD TIME</button>
+                <button class="showSpent" type="">SHOW SPEND TIME</button>
+            </div>
+            <div class="timerBody">
+              <div>
+                <p>Потрачено годин</p>
+                <input class="littleInp numInp spentH" min="0" max="1000000000" type="number" name="spentH" value="">
+              </div>
+              <div>
+                <p>Потрачено хвилин</p>
+                <input class="littleInp numInp spentM" min="0" max="1000000000" type="number" name="spentM" value="">
+              </div>
+              <div>
+                <p>На що потрачено</p>
+                <input class="littleInp textInp spentD" type="text" name="spentD" value="">
+              </div>              
+            </div>
+        </div>

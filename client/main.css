@@ -1,0 +1,116 @@
+html{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+}
+.container {
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+.h1{
+  text-align: center;
+}
+.line {
+  display: flex;
+  justify-content:space-between;
+}
+.line > div {
+  width: 50%;
+}
+.addTimeHead {
+  width: 100%;
+  height: 10%;
+  padding-left: 50px;
+  padding-top: 12px;
+  padding-bottom: 10px;
+}
+.timer {
+  width: 300px;
+  height: 350px;
+  background: lightgrey;
+}
+.timerBody {
+  height: 90%;
+  background: lightblue;
+  padding-top: 20%;
+}
+.timerBody>div {
+  padding-left: 25px
+}
+.littleInp {
+	margin: 0 auto;
+	height: 30px;
+	border: 1px solid #EEEEEE;
+	border-radius: 10px;
+	outline: none;
+  padding: 0 10px;
+}
+.numInp {
+  width: 85px
+}
+.textInp {
+  width: 205px
+}
+.proposalTime {
+
+}
+.proposal {
+  background: gainsboro;
+  border-radius: 30px;
+  width: 300px;
+  padding-top: 10px;
+  height: 350px;
+}
+.proposal>div {
+  padding-left: 25px;
+}
+
+button{
+  border-radius: 10px;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  padding: .8em 1em calc(.8em + 3px);
+  background: rgb(64,199,129);
+  box-shadow: 0 -3px rgb(53,167,110) inset;
+  transition: 0.2s;
+} 
+button:hover { background: rgb(53, 167, 110); }
+button:active {
+  background: rgb(33,147,90);
+  box-shadow: 0 3px rgb(33,147,90) inset;
+}
+.propButton {
+  margin: 40px;
+}
+.timeWhatYouNeed {
+  text-align: center;
+}
+.tableDuv {
+  margin-top: 100px;
+}
+.timerTtack {
+  background: #b9aee0;
+}
+
+/*
+table
+*/
+td, th {
+  border: 1px solid #999;
+  padding: 0.5rem;
+  text-align: left;
+}
+tr:nth-child(2n) {
+  background: #f0f0f0; /* Цвет фона */
+} 
+table {
+  border-collapse: collapse;
+}
+thead {
+  background: lightgray;
+}
