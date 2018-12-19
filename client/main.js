@@ -2,10 +2,6 @@ import { Template } from 'meteor/templating';
 import { Times } from '../imports/api/times.js';
 import './main.html';
 
-var sec = document.querySelector('.secs');
-var min = document.querySelector('.mins');
-var hours = document.querySelector('.hours');
-var flag = false;
 var showDB = false;
 
 
@@ -168,15 +164,14 @@ Template.hello.events({
     showDB = !showDB;
     if (showDB) {
       $('#tableUsers').show();
-      $('.showSpent').text('HIDE SPENT TIME');
+      $('.showSpent').text('Сховати табл часу');
     } else {
       $('#tableUsers').hide();
-      $('.showSpent').text('SHOW SPENT TIME');
+      $('.showSpent').text('Показати табл часу');
     }
     console.log('tmes',Times.find().fetch());
   }, 
   'click th[data-sortby]': function(e, tmpl) {
-
     var sortBy = e.currentTarget.getAttribute('data-sortby');
     if (tmpl.sortBy.get() === sortBy) {
       tmpl.sortOrder.set(-tmpl.sortOrder.get());
@@ -184,5 +179,27 @@ Template.hello.events({
       tmpl.sortBy.set(sortBy);
       tmpl.sortOrder.set(1);
     }
-  }
+  },
+  'click .btnSearchUser': function (event, tmpl) {
+    event.preventDefault();
+    tmpl.search.set(document.getElementsByClassName("searchInTable")[0].value);
+    tmpl.searchBool.set(true);
+  },
+  'click .btnSearchTotalTime': function (event) {
+    event.preventDefault();
+    var mail = document.getElementsByClassName("searchTotalTime")[0].value;
+    var tim = Times.find({ userEmail: mail }).fetch();
+    let hours = 0;
+    let min = 0;
+    for (let i=0;i<tim.length;i++) {
+      hours = hours + tim[i].spentH;
+      min = min + tim[i].spentM;
+    }
+    if (min>59) {
+      var th = Math.trunc(min/60);
+      hours = hours+ th;
+      min=min-th*60;
+    }
+    alert('This user spent hours: '+hours+' and spent minute: '+min);
+  },
 });

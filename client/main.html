@@ -5,18 +5,23 @@
 
 <body>
   {{> loginButtons}}
-  <h1 class="h1">Welcome to Tracker!</h1>
+  <h1 class="h1">Вітаю в трекері часу!</h1>
   {{> hello}}
 </body>
 
 <template name="hello">
   <div class="container">
+    <input class="littleInp textInp searchInTable" placeholder="Пошук в таблиці по імені" type="text" name="spentD" value="">
+    <button class="propButton searchBtn btnSearchUser" type="">Пошук користув</button>
+    <input class="littleInp textInp searchTotalTime" placeholder="Потрачено годин користувачем" type="text" name="spentD" value="">
+    <button class="propButton searchBtn btnSearchTotalTime" type="">Потрачено загалом</button>
+    
     <div class="line">
       <div class="addTimeBlock">
         <div class="proposal timerTtack">
           <div class="addTimeHead">
-              <button class="addBtn" type="">ADD TIME</button>
-              <button class="showSpent" type="">SHOW SPEND TIME</button>
+              <button class="addBtn" type="">Додати час</button>
+              <button class="showSpent" type="">Показати табл часу</button>
           </div>
           <div>
             <p>Потрачено годин</p>
@@ -55,11 +60,11 @@
         <table id="tableUsers">
             <thead>
                 <tr>
-                  <th class="thLogo">Користувач</th>
-                  <th data-sortby="name" class="thName">Потрачено годин</th>
+                  <th data-sortby="userEmail" class="thLogo">Користувач</th>
+                  <th data-sortby="spentH" class="thName">Потрачено годин</th>
                   <th class="thAddress">Потрачено хвилин</th>
-                  <th data-sortby="countEmployee" class="thcountEmploye">На що потрачено</th>
-                  <th data-sortby="countEmployee" class="thcountEmploye">Коли потрачено</th>
+                  <th class="thcountEmploye">На що потрачено</th>
+                  <th data-sortby="data" class="thcountEmploye">Коли потрачено</th>
                 </tr>
             </thead>
             <tbody>

@@ -18,9 +18,6 @@ html{
   display: flex;
   justify-content:space-between;
 }
-.line > div {
-  width: 50%;
-}
 .addTimeHead {
   width: 100%;
   height: 10%;
@@ -56,7 +53,7 @@ html{
   width: 205px
 }
 .proposalTime {
-
+  float: right;
 }
 .proposal {
   background: gainsboro;
@@ -110,7 +107,16 @@ tr:nth-child(2n) {
 } 
 table {
   border-collapse: collapse;
+  height: 200px;
 }
 thead {
   background: lightgray;
+}
+tbody {
+  height: 80px;
+  overflow: auto;
+}
+.searchBtn {
+  background: rgb(151, 207, 236);
+  box-shadow: 0 -3px rgb(151, 207, 236) inset;
 }
