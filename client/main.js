@@ -133,7 +133,7 @@ Template.hello.events({
       hrs = hrs+ th;
       min=min-th*60
     }
-    document.querySelector('.timeWhatYouNeed').innerHTML = 'Hours : '+hrs+'  '+'Minute : '+min;
+    document.querySelector('.timeWhatYouNeed').innerHTML = 'Потрібно год : '+hrs+'  '+'хвилин : '+min;
   },
   'click .addBtn': function (e) {
     e.preventDefault();
