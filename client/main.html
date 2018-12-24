@@ -10,30 +10,41 @@
 </body>
 
 <template name="hello">
+  <div class="sidenav">
+    <div class="menu_item addTimeMemuItem"><span class="iconTimer"></span>Додати час</div>
+    <div class="menu_item addNeedMemuItem">Потрібий час</div>
+    <div class="menu_item tableMenuItem">Таблиця</div>
+    <div class="menu_item aboutMenuItem">Про цей проект</div>
+  </div>
   <div class="container">
-    <input class="littleInp textInp searchInTable" placeholder="Пошук в таблиці по імені" type="text" name="spentD" value="">
-    <button class="propButton searchBtn btnSearchUser" type="">Пошук користув</button>
-    <input class="littleInp textInp searchTotalTime" placeholder="Потрачено годин користувачем" type="text" name="spentD" value="">
-    <button class="propButton searchBtn btnSearchTotalTime" type="">Потрачено загалом</button>
+    <div class="aboutProject">
+      <h2>
+        Цей проект робив Іляш Михайло проект - трекер часу із занесенням в базу данних
+        база данних на фронті
+      </h2>
+    </div>
+    <input class="addt littleInp textInp searchInTable" placeholder="Пошук в таблиці по імені" type="text" name="spentD" value="">
+    <button class="addt propButton searchBtn btnSearchUser" type="">Пошук користув</button>
+    <input class="addt littleInp textInp searchTotalTime" placeholder="Потрачено годин користувачем" type="text" name="spentD" value="">
+    <button class="addt propButton searchBtn btnSearchTotalTime" type="">Потрачено загалом</button>
     
     <div class="line">
       <div class="addTimeBlock">
         <div class="proposal timerTtack">
           <div class="addTimeHead">
               <button class="addBtn" type="">Додати час</button>
-              <button class="showSpent" type="">Показати табл часу</button>
           </div>
           <div>
             <p>Потрачено годин</p>
-            <input class="littleInp numInp spentH" min="0" max="1000000000" type="number" name="spentH" value="">
+            <input data-title="Введіть кількісто потрачених годин" class="littleInp numInp spentH" min="0" max="1000000000" type="number" name="spentH" value="" placeholder="годин">
           </div>
           <div>
             <p>Потрачено хвилин</p>
-            <input class="littleInp numInp spentM" min="0" max="1000000000" type="number" name="spentM" value="">
+            <input data-title="Введіть кількісто потрачених хвилин" class="littleInp numInp spentM" min="0" max="1000000000" type="number" name="spentM" value="" placeholder="хвилин">
           </div>
           <div>
             <p>На що потрачено</p>
-            <input class="littleInp textInp spentD" type="text" name="spentD" value="">
+            <input data-title="Введіть проект над яким працювали" class="littleInp textInp spentD" type="text" name="spentD" value="" placeholder="проект">
           </div>
         </div>
       </div>
@@ -41,11 +52,11 @@
           <div class="proposal">
               <div>
                   <p>Потрібно годин</p>
-                  <input class="littleInp numInp needH" type="number" name="" value="">
+                  <input data-title="Введіть кількісто потрібних годин" class="littleInp numInp needH" type="number" name="" value="" placeholder="годин">
                 </div>
                 <div>
                   <p>Потрібно хвилин</p>
-                  <input class="littleInp numInp needM" type="number" name="" value="">
+                  <input data-title="Введіть кількісто потрібних хвилин" class="littleInp numInp needM" type="number" name="" value="" placeholder="хвилин">
                 </div>
                 <div>
                   <button class="propButton" type="">Оновити потрібний час</button>  

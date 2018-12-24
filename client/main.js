@@ -3,47 +3,13 @@ import { Times } from '../imports/api/times.js';
 import './main.html';
 
 var showDB = false;
-
-
-function getTime() {
-  var currentDate = new Date;
-  timer = new Date (currentDate - initialDate);
-  seconds = timer.getSeconds();
-  minutes = timer.getMinutes();
-  hours = timer.getUTCHours();
-
-  if(seconds < 10){
-    seconds = '0' + seconds;
-  }
-  if (minutes < 10){
-    minutes = '0' + minutes;
-  }
-  if (hours < 10){
-    hours = '0' + hours;
-  }
-}
-
-function stopTimer() {
-  clearInterval(timerId);
-  getTime();
-  flag = true;
-}
-function startStopwatch() {
-   if(!flag) initialDate = new Date;
-}
-function displayStopButton () {
-  document.getElementsByClassName("start").value="Stop";
-}
-function displayTimer() {
-    timerId = setInterval(counter, 10);
-  }
-  function counter() {
-      getTime();
-      document.querySelector('.secs').innerHTML = seconds;
-      document.querySelector('.mins').innerHTML = minutes;
-      document.querySelector('.hours').innerHTML = hours;
-    }
-  
+function hideElem() {
+  $('.addTimeBlock').hide();
+  $('.proposalTime').hide();
+  $('.tableDuv').hide();
+  $('.addt').hide();
+  $('.aboutProject').hide();
+}  
 Template.hello.onCreated(function() {
 
   var tmpl = this;
@@ -52,7 +18,6 @@ Template.hello.onCreated(function() {
   tmpl.sortOrder = new ReactiveVar(1);
   tmpl.search = new ReactiveVar('');
   tmpl.searchBool = new ReactiveVar(false);
-
 });
 
 Template.hello.helpers({
@@ -159,18 +124,6 @@ Template.hello.events({
       alert('Please log in or register')
     }
   }, 
-  'click .showSpent': function (e) {
-    e.preventDefault();
-    showDB = !showDB;
-    if (showDB) {
-      $('#tableUsers').show();
-      $('.showSpent').text('Сховати табл часу');
-    } else {
-      $('#tableUsers').hide();
-      $('.showSpent').text('Показати табл часу');
-    }
-    console.log('tmes',Times.find().fetch());
-  }, 
   'click th[data-sortby]': function(e, tmpl) {
     var sortBy = e.currentTarget.getAttribute('data-sortby');
     if (tmpl.sortBy.get() === sortBy) {
@@ -201,5 +154,26 @@ Template.hello.events({
       min=min-th*60;
     }
     alert('This user spent hours: '+hours+' and spent minute: '+min);
+  },
+  'click .addTimeMemuItem': function (event) {
+    event.preventDefault();
+    hideElem();
+    $('.addTimeBlock').show();
+    $('.addt').show();
+  },
+  'click .addNeedMemuItem': function (event) {
+    event.preventDefault();
+    hideElem();
+    $('.proposalTime').show();
+  },
+  'click .tableMenuItem': function (event) {
+    event.preventDefault();
+    hideElem();
+    $('.tableDuv').show();
+  },
+  'click .aboutMenuItem': function (event) {
+    event.preventDefault();
+    hideElem();
+    $('.aboutProject').show();
   },
 });

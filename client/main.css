@@ -5,18 +5,21 @@ html{
 
 }
 .container {
-  width: 100%;
+  width: 88%;
   max-width: 1170px;
   margin: 0 auto;
   padding: 0 15px;
   box-sizing: border-box;
+  margin-left: 12%; /* Same as the width of the sidenav */
+  padding: 0px 10px;
 }
 .h1{
   text-align: center;
 }
 .line {
   display: flex;
-  justify-content:space-between;
+  align-items: center;
+  justify-content: center;
 }
 .addTimeHead {
   width: 100%;
@@ -120,3 +123,54 @@ tbody {
   background: rgb(151, 207, 236);
   box-shadow: 0 -3px rgb(151, 207, 236) inset;
 }
+/*sidebar 160*/
+.sidenav {
+  height: 100%;
+  width: 12%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+.sidenav .menu_item {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+.sidenav .menu_item:hover {
+  color: #f1f1f1;
+}
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav .menu_item {font-size: 18px;}
+}
+/**********************/
+.addTimeBlock {
+  display: none;
+}
+.proposalTime {
+  display: none;
+}
+.tableDuv {
+  display: none;
+}
+.addt {
+  display: none;
+}
+.iconTimer{
+  background-image: url('./icons/icons-timer.png')
+}
+.aboutProject {
+  display: none;
+}
+#login-buttons {
+  margin-left: 12%;
+}
+input:hover { 
+  content: attr(data-title); 
+ } 
